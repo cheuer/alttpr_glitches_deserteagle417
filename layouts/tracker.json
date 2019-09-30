@@ -1,0 +1,248 @@
+{
+    "shared_item_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+            [
+                "bowandarrows",
+                "boomerangs",
+                "hookshot",
+                "bombs",
+                "powder",
+                "mushroom",
+                "tr_bigkey",
+                "easternpalace",
+                "skullwoods"
+            ],
+            [
+                "firerod",
+                "icerod",
+                "bombos",
+                "ether",
+                "quake",
+                "shovel",
+                "gt_bigkey",
+                "desertpalace",
+                "thievestown"
+            ],
+            [
+                "lamp",
+                "hammer",
+                "ocarina",
+                "net",
+                "book",
+                "pearl",
+                "aga1",
+                "towerofhera",
+                "icepalace"
+            ],
+            [
+                "bottle",
+                "somaria",
+                "byrna",
+                "cape",
+                "mirror",
+                "armor",
+                "aga2",
+                "palaceofdarkness",
+                "miserymire"
+            ],
+            [
+                "lift1",
+                "boots",
+                "flippers",
+                "halfmagic",
+                "owsword",
+                "gt_crystals",
+                "ganon_crystals",
+                "swamppalace",
+                "turtlerock"
+            ]
+        ]
+    },
+    "tracker_capture_item": {
+        "type": "container",
+        "content": {
+            "type": "itemgrid",
+            "h_alignment": "center",
+            "item_margin": "1,2",
+            "rows": [
+                [
+                    "bowandarrows",
+                    "",
+                    "",
+                    "hookshot",
+                    "powder",
+                    "mushroom",
+                    "blue_boomerang"
+                ],
+                [
+                    "firerod",
+                    "icerod",
+                    "bombos",
+                    "ether",
+                    "quake",
+                    "shovel",
+                    "red_boomerang"
+                ],
+                [
+                    "lamp",
+                    "hammer",
+                    "ocarina",
+                    "net",
+                    "book",
+                    "pearl",
+                    "generic_smallkey"
+                ],
+                [
+                    "bottle",
+                    "somaria",
+                    "byrna",
+                    "cape",
+                    "mirror",
+                    "",
+                    "generic_bigkey"
+                ],
+                [
+                    "lift1",
+                    "boots",
+                    "flippers",
+                    "halfmagic",
+                    "owsword",
+                    "shield",
+                    "armor"
+                ]
+            ]
+        }
+    },
+    "glitched_mode": {
+        "type": "container",
+        "content": {
+            "type": "itemgrid",
+            "h_alignment": "center",
+            "item_margin": "1,1",
+            "item_height": 33,
+            "item_width": 100,
+            "rows": [
+                [
+                    "owg"
+                ]
+            ]
+        }
+    },
+    "tracker_default": {
+        "type": "container",
+        "background": "#877373",
+        "content": {
+            "type": "dock",
+            "dropshadow": true,
+            "content": [
+                {
+                    "type": "dock",
+                    "width": 330,
+                    "dock": "left",
+                    "v_alignment": "stretch",
+                    "content": [
+                        {
+                            "type": "dock",
+                            "dock": "top",
+                            "content": [
+                                {
+                                    "type": "group",
+                                    "header": "Items",
+                                    "dock": "top",
+                                    "content": {
+                                        "type": "layout",
+                                        "key": "shared_item_grid"
+                                    }
+                                }
+                            //    {
+                            //        "type": "group",
+                            //        "header": "Glitched Logic",
+                            //        "dock": "bottom",
+                            //        "content": {
+                            //            "type": "layout",
+                            //            "key": "glitched_mode"
+                            //        }
+                            //    }
+                            ]
+                        },
+                        {
+                            "type": "group",
+                            "header": "Pinned Locations",
+                            "content": {
+                                "type": "recentpins",
+                                "style": "wrap",
+                                "h_alignment": "stretch",
+                                "v_alignment": "stretch",
+                                "orientation": "vertical",
+                                "compact": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "map"
+                }
+            ]
+        }
+    },
+    "tracker_horizontal": {
+        "type": "container",
+        "background": "#877373",
+        "content": {
+            "type": "dock",
+            "dropshadow": true,
+            "content": [
+                {
+                    "type": "dock",
+                    "dock": "bottom",
+                    "content": [
+                        {
+                            "type": "dock",
+                            "dock": "left",
+                            "content": [
+                                {
+                                    "type": "group",
+                                    "header": "Items",
+                                    "margin": "0,0,3,0",
+                                    "dock": "top",
+                                    "content": {
+                                        "type": "layout",
+                                        "key": "shared_item_grid"
+                                    }
+                                }
+                            //    {
+                            //        "type": "group",
+                            //        "header": "Glitched Logic",
+                            //        "margin": "0,0,3,0",
+                            //        "dock": "bottom",
+                            //        "content": {
+                            //            "type": "layout",
+                            //            "key": "glitched_mode"
+                            //        }
+                            //    }
+                            ]
+                        },
+                        {
+                            "type": "group",
+                            "header": "Pinned Locations",
+                            "content": {
+                                "type": "recentpins",
+                                "style": "wrap",
+                                "h_alignment": "stretch",
+                                "v_alignment": "stretch",
+                                "orientation": "horizontal",
+                                "compact": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "map"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "tracker_broadcast": {
+        "type": "array",
+        "dropshadow": true,
+        "width": 370,
+        "margin": "10",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "h_alignment": "center",
+                        "item_margin": "4,5",
+                        "rows": [
+                            [
+                                "bowandarrows",
+                                "boomerangs",
+                                "hookshot",
+                                "bombs",
+                                "powder",
+                                "mushroom",
+                                "tr_bigkey",
+                                "easternpalace",
+                                "skullwoods"
+                            ],
+                            [
+                                "firerod",
+                                "icerod",
+                                "bombos",
+                                "ether",
+                                "quake",
+                                "shovel",
+                                "gt_bigkey",
+                                "desertpalace",
+                                "thievestown"
+                            ],
+                            [
+                                "lamp",
+                                "hammer",
+                                "ocarina",
+                                "net",
+                                "book",
+                                "pearl",
+                                "aga1",
+                                "towerofhera",
+                                "icepalace"
+                            ],
+                            [
+                                "bottle",
+                                "somaria",
+                                "byrna",
+                                "cape",
+                                "mirror",
+                                "armor",
+                                "aga2",
+                                "palaceofdarkness",
+                                "miserymire"
+                            ],
+                            [
+                                "lift1",
+                                "boots",
+                                "flippers",
+                                "halfmagic",
+                                "owsword",
+                                "gt_crystals",
+                                "ganon_crystals",
+                                "swamppalace",
+                                "turtlerock"
+                            ]
+                        ]
+                    },
+                    {
+                        "type": "container",
+                        "margin": "0,5,0,0",
+                        "content": {
+                            "type": "recentpins",
+                            "h_alignment": "stretch",
+                            "v_alignment": "center",
+                            "orientation": "vertical",
+                            "compact": true,
+                            "num_items": 2
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

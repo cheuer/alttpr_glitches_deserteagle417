@@ -1,0 +1,16 @@
+[
+  // TR Big Key
+  {
+    "name": "Turtle Rock Big Key",
+    "type": "toggle",
+    "img": "images/TRBK.png",
+    "codes": "tr_bigkey"
+  },
+  // GT Big Key
+  {
+    "name": "Ganon's Tower Big Key",
+    "type": "toggle",
+    "img": "images/GTBK.png",
+    "codes": "gt_bigkey"
+  }  
+]
