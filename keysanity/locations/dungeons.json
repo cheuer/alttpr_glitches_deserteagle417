@@ -623,6 +623,7 @@
                     },
                     {
                         "name": "Left Side",
+                        "clear_as_group": false,
                         "access_rules": [
                             "hammer, hookshot, [gt_smallkey:3]",
                             "hammer, boots, [gt_smallkey:3]"

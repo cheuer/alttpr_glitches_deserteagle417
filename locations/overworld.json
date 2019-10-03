@@ -329,7 +329,7 @@
               "aga1",
               "pearl, lift2, boots",
               "pearl, lift2, flippers",
-              "pearl, hammer, lift1", // NMG Access
+              "pearl, hammer, lift1", //
               "mirror, boots, sword",
               "mirror, boots, hookshot", //  Spinspeed mapwrap, portal
               "pearl, boots",
@@ -365,9 +365,9 @@
               "aga1,hammer,pearl,crystal56:2",
               "aga1,lift2,pearl,mirror,crystal56:2",
               "lift2,pearl,crystal56:2,[hammer]", // NMG
-              "mirror, boots, sword",
-              "mirror, boots, hookshot"
-            ], // Spinspeed MapWrap
+              "hammer, mirror, pearl, boots, crystal56:2",
+              "mirror, boots" // OWG
+            ],
             "sections": [
               {
                 "name": "Big Bomb Spot",
