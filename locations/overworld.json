@@ -675,6 +675,7 @@
               "pearl,aga1,hammer,hookshot,mirror",
               "pearl,aga1,lift1,hookshot,mirror",
               "pearl,lift1,hammer,mirror", //NMG
+              "boots",
               "mirror, pearl" //OWG
             ],
             "sections": [
