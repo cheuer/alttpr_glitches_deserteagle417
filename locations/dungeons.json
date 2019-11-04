@@ -332,7 +332,7 @@
                 "name": "Dungeon",
                 "clear_as_group": false,
                 "access_rules": [
-                    "[hammer],[hookshot],[somaria]"
+                    "[hammer],[hookshot],[somaria],[lift1]"
                 ],
                 "item_count": 3
             },
@@ -340,8 +340,8 @@
             {
                 "name": "Khold",
                 "access_rules": [
-                    "hammer,bombos,$canUseMedallions",
-                    "hammer,firerod"
+                    "hammer,bombos,$canUseMedallions,lift1",
+                    "hammer,firerod,lift1"
                 ],
                 "hosted_item": "icepalace"
             }

@@ -1,6 +1,10 @@
 --  Load configuration options up front
 ScriptHost:LoadScript("scripts/settings.lua")
 
+ScriptHost:LoadScript("scripts/logic_common.lua")
+ScriptHost:LoadScript("scripts/logic_custom.lua")
+Tracker:AddMaps("maps/maps.json")
+
 Tracker:AddItems("items/common.json")
 Tracker:AddItems("items/dungeon_items.json")
 Tracker:AddItems("items/labels.json")
@@ -14,9 +18,6 @@ else
     Tracker:AddLocations("keysanity/locations/dungeons.json")
 end
 
-ScriptHost:LoadScript("scripts/logic_common.lua")
-ScriptHost:LoadScript("scripts/logic_custom.lua")
-Tracker:AddMaps("maps/maps.json")
 if not (string.find(Tracker.ActiveVariantUID, "inverted")) then
     Tracker:AddLocations("locations/overworld.json")
 else

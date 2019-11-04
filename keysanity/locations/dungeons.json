@@ -380,7 +380,7 @@
             {
                 "name": "Dungeon",
                 "access_rules": [
-                    "[hookshot],[hammer],[ip_bigkey]"
+                    "[hookshot],[hammer],[ip_bigkey],[lift1]"
                 ],
                 "clear_as_group": false,
                 "item_count": 7
@@ -389,10 +389,10 @@
             {
                 "name": "Khold",
                 "access_rules": [
-                    "hammer,bombos,$canUseMedallions,[somaria]",
-                    "hammer,firerod,[somaria]",
-                    "hammer,bombos,$canUseMedallions,[ip_smallkey:1]",
-                    "hammer,firerod,[ip_smallkey:1]"
+                    "hammer,bombos,$canUseMedallions,[somaria],lift1",
+                    "hammer,firerod,[somaria],lift1",
+                    "hammer,bombos,$canUseMedallions,[ip_smallkey:1],lift1",
+                    "hammer,firerod,[ip_smallkey:1],lift1"
                 ],
                 "hosted_item": "icepalace",
                 "item_count": 1
