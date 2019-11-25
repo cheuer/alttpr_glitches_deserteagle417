@@ -24,13 +24,6 @@ else
     Tracker:AddLocations("inverted_locations/overworld.json")
 end 
 
--- If current version is keysanity, use keysanity dungeon logic
-if not (string.find(Tracker.ActiveVariantUID, "keys")) then
-    Tracker:AddLocations("locations/dungeons.json")
-else
-    Tracker:AddLocations("keysanity/locations/dungeons.json")
-end
-
 Tracker:AddLayouts("layouts/tracker.json")
 
 -- Select a broadcast view layout based on whether the current variant is keysanity or not
