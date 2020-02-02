@@ -107,8 +107,12 @@ function upperTurtleRock()
 end
 
 function canOWYBA()
-    if Tracker:ProviderCountForCode("mg") > 0 then
-        return 1
+    if has("bottle") then
+        if Tracker:ProviderCountForCode("mg") > 0 then
+            return 1
+        else
+            return 1, AccessibilityLevel.SequenceBreak
+        end
     else
         return 0
     end
@@ -118,7 +122,7 @@ function canOneFrameClipOW()
     if Tracker:ProviderCountForCode("mg") > 0 then
         return 1
     else
-        return 0
+        return 1, AccessibilityLevel.SequenceBreak
     end
 end
 
