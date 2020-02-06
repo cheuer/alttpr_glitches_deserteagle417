@@ -133,3 +133,15 @@ function canOneFrameClipUW()
         return 0
     end
 end
+
+function canMirrorWrap()
+    if has("mirror") then
+        if Tracker:ProviderCountForCode("mg") > 0 then
+            return 1
+        else
+            return 1, AccessibilityLevel.SequenceBreak
+        end
+    else
+        return 0
+    end
+end
