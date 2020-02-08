@@ -68,42 +68,69 @@ function has(item, amount)
 end
 
 function lowerTurtleRock()
-    if has("mirror")
-    and has("pearl")
-    and has("boots") --mirror wrap
+    if canMirrorWrap()
+    and ( has("pearl") or canOWYBA() )
+    and ( has("boots") or canOneFrameClipOW() )
     then
-      return 1
-    else
-      return 0
+        if Tracker:ProviderCountForCode("mg") > 0 then
+            return 1
+        else
+            return 1, AccessibilityLevel.SequenceBreak
+        end
     end
+
+    return 0
 end
 
 function middleTurtleRock()
     if has("mirror") --mirror clip
-    or ((has("sword") or has("hootshot"))
+    or ((has("sword") or has("hookshot"))
     and has("pearl")
     and has("boots")) --superspeed clip
-
     then
-      return 1
-    else
-      return 0
+        return 1
+    else 
+        if has("boots") and canOWYBA() or canOneFrameClipOW() then
+            if Tracker:ProviderCountForCode("mg") > 0 then
+                return 1
+            else
+                return 1, AccessibilityLevel.SequenceBreak
+            end
+        else
+            
+        end
     end
+
+    return 0
 end
 
 function upperTurtleRock()
-    if has("somaria")
-    and has("pearl")
-    and (has("tr_medallion") or (has("bombos") and has("ether") and has("quake")))
-    and has("$canUseMedallions")
-    and (has("boots") -- boots clip
+    if not canOpenTurtleRock() then return 0 end
+
+    if has("boots") -- boots clip
         or (has("lift2") and has("hammer")) -- normal
-    )
     then
-      return 1
-    else
-      return 0
+        return 1
     end
+
+    if (has("pearl") or (canOWYBA() and (has("boots") or canOneFrameClipOW())))
+    and ((has("lift2") and has("hammer")) or has("boots") or canOneFrameClipOW() )
+    then
+        if Tracker:ProviderCountForCode("mg") > 0 then
+            return 1
+        else
+            return 1, AccessibilityLevel.SequenceBreak
+        end
+    end
+
+    return 0
+end
+
+function canOpenTurtleRock()
+    return has("somaria")
+        and has("pearl")
+        and (has("tr_medallion") or (has("bombos") and has("ether") and has("quake")))
+        and has("$canUseMedallions")
 end
 
 function canOWYBA()

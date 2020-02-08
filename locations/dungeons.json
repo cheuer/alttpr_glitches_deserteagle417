@@ -91,7 +91,8 @@
             "book",
             "flute,lift2,mirror",//NMG
             "boots",//OWG
-            "bottle,lift2,mirror,[]"//OWG Fake Flute
+            "bottle,lift2,mirror,[]",//OWG Fake Flute
+            "$canOneFrameClipOW"
         ],
         "sections": [
             {
@@ -120,7 +121,14 @@
                     "boots,firesource,icerod",
                     "boots,firesource,bow",
                     "boots,firesource,somaria",
-                    "boots,firesource,[sword]"//OWG
+                    "boots,firesource,[sword]",//OWG
+                    "$canOneFrameClipOW,firesource,sword",
+                    "$canOneFrameClipOW,firesource,hammer",
+                    "$canOneFrameClipOW,firesource,firerod",
+                    "$canOneFrameClipOW,firesource,icerod",
+                    "$canOneFrameClipOW,firesource,bow",
+                    "$canOneFrameClipOW,firesource,somaria",
+                    "$canOneFrameClipOW,firesource,[sword]"//MG
                 ],
                 "hosted_item": "desertpalace"
             }
@@ -143,7 +151,9 @@
             "aga1,pearl",
             "hammer,lift1,pearl",
             "lift2,flippers,pearl",//NMG
-            "boots,pearl"//OWG
+            "boots,pearl",//OWG
+            "$canOWYBA,@Dark Central (Pyramid)", //MG
+            "$canOneFrameClipUW,@Death Mountain"
         ],
         "sections": [
             //  Front
@@ -180,7 +190,9 @@
         "group": "Swamp Area",
         "color": "#0d8452",
         "access_rules": [
-            "pearl"
+            "pearl",
+            "$canOWYBA",
+            "$canOneFrameClipOW"
         ],
         "children": [
             //  Dark Swamp Area
@@ -195,7 +207,9 @@
                     "aga1, hookshot, flippers", //NMG
                     "mirror, lift1, [lamp]",
                     "mirror, flute",
-                    "boots" //OWG
+                    "boots", //OWG
+                    "$canOWYBA",
+                    "$canOneFrameClipOW"
                 ],
                 "children": [
                     //  Swamp Palace
@@ -211,7 +225,8 @@
                                 "name": "Dungeon",
                                 "clear_as_group": false,
                                 "access_rules": [
-                                    "[hammer],[hookshot]"
+                                    "[hammer],[hookshot]",
+                                    "$canOneFrameClipUW,[hookshot]"
                                 ],
                                 "item_count": 6
                             },
@@ -219,7 +234,8 @@
                             {
                                 "name": "Arrgus",
                                 "access_rules": [
-                                    "hammer,hookshot"
+                                    "hammer,hookshot",
+                                    "$canOneFrameClipUW,hookshot"
                                 ],
                                 "hosted_item": "swamppalace"
                             }
@@ -250,7 +266,9 @@
             "boots, pearl",
             "mirror, boots",
             "mirror, lift1, [lamp]",
-            "mirror, flute" //OWG
+            "mirror, flute", //OWG
+            "$canOneFrameClipOW",
+            "$canOWYBA" //MG
         ],
         "children": [
             //  Skull Woods
@@ -285,6 +303,10 @@
             {
                 "name": "Thieves Town",
                 "color": "#af0000",
+                "access_rules": [
+                    "pearl",
+                    "$canOWYBA"
+                ],
                 "sections": [
                     {
                         "name": "Dungeon",
@@ -323,8 +345,13 @@
         "access_rules": [
             "lift2,firerod",
             "lift2,bombos,$canUseMedallions", //NMG
-            "pearl,boots,mirror,firerod",
-            "pearl,boots,mirror,bombos,$canUseMedallions" //OWG
+            "pearl,boots,$canMirrorWrap,firerod",
+            "pearl,boots,$canMirrorWrap,bombos,$canUseMedallions", //OWG
+            "pearl,boots,flippers,firerod",
+            "pearl,boots,flippers,bombos,$canUseMedallions",
+            "lift2,$canOneFrameClipUW", //MG
+            "pearl,boots,$canMirrorWrap,$canOneFrameClipUW",
+            "pearl,boots,flippers,$canOneFrameClipUW"
         ],
         "sections": [
             //  Front
@@ -360,10 +387,16 @@
         "color": "#af0000",
         "parent": "Mire Area",
         "access_rules": [
-            "$canUseMedallions,moonpearl,mm_medallion,hookshot",
-            "$canUseMedallions,moonpearl,mm_medallion,boots",
+            "$canUseMedallions,moonpearl,mm_medallion,hookshot", //NMG
             "$canUseMedallions,moonpearl,bombos,ether,quake,hookshot",
-            "$canUseMedallions,moonpearl,bombos,ether,quake,boots"
+            "$canUseMedallions,moonpearl,mm_medallion,boots", //OWG
+            "$canUseMedallions,moonpearl,bombos,ether,quake,boots",
+            "$canUseMedallions,mm_medallion,$canOWYBA,boots", //MG
+            "$canUseMedallions,bombos,ether,quake,$canOWYBA,boots",
+            "$canUseMedallions,mm_medallion,$canOWYBA,$canOneFrameClipOW",
+            "$canUseMedallions,bombos,ether,quake,$canOWYBA,$canOneFrameClipOW",
+            "$canUseMedallions,mm_medallion,$canOWYBA,bottle:2",
+            "$canUseMedallions,bombos,ether,quake,$canOWYBA,bottle:2"
         ],
         "sections": [
             //  Front
@@ -401,7 +434,8 @@
             "lift1,[lamp]",
             "flute",//NMG
             "boots",//OWG
-            "bottle,[]"//OWG Fake Flute
+            "$canOWYBA",
+            "$canOneFrameClipOW" //MG
         ],
         "children": [
             //  Tower of Hera
@@ -411,7 +445,8 @@
                 "access_rules": [
                     "mirror",
                     "hookshot,hammer",//NMG
-                    "boots"//OWG
+                    "boots",//OWG
+                    "$canOneFrameClipUW,@Misery Mire"
                 ],
                 "sections": [
                     {
@@ -533,7 +568,8 @@
                 "color": "#af0000",
                 "access_rules": [
                     "lift2, $gtCrystalCount", //NMG + Possible Bunny Revival
-                    "boots, pearl" //OWG
+                    "boots, pearl", //OWG
+                    "$canOneFrameClipOW"
                 ],
                 "sections": [
                     {
