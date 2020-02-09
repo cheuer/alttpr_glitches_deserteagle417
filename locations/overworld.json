@@ -414,7 +414,7 @@
               {
                 "name": "Tablet",
                 "access_rules": [
-                  "@Dark Central (Left),mirror", //NMG
+                  "@Dark Central (Left),mirror,$canActivateTablets", //NMG
                   "boots,book,$canActivateTablets",
                   "{boots,book}",
                   "$canOneFrameClipOW,$canActivateTablets", //MG
