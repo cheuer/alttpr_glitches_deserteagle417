@@ -334,8 +334,10 @@
               "mirror, boots, hookshot", //  Spinspeed mapwrap, portal
               "pearl, boots",
               "[lamp], pearl, mirror, lift1",
-              "pearl, mirror, flute"
-            ], //dmd
+              "pearl, mirror, flute", //dmd
+              "$canOWYBA", //MG
+              "$canOneFrameClipOW"
+            ],
             "children": [
               {
                 "name": "Pyramid Ledge",
@@ -366,7 +368,8 @@
               "aga1,lift2,pearl,mirror,crystal56:2",
               "lift2,pearl,crystal56:2,[hammer]", // NMG
               "hammer, mirror, pearl, boots, crystal56:2",
-              "mirror, boots" // OWG
+              "mirror, boots", // OWG
+              "mirror,$canOneFrameClipOW"
             ],
             "sections": [
               {
@@ -385,7 +388,9 @@
           {
             "name": "South of Grove",
             "access_rules": [
-              "boots"
+              "@Dark Central (Left),mirror", //NMG
+              "boots",
+              "$canOneFrameClipOW"
             ],
             "sections": [
               {
@@ -409,8 +414,11 @@
               {
                 "name": "Tablet",
                 "access_rules": [
+                  "@Dark Central (Left),mirror,$canActivateTablets", //NMG
                   "boots,book,$canActivateTablets",
-                  "{boots,book}"
+                  "{boots,book}",
+                  "$canOneFrameClipOW,$canActivateTablets", //MG
+                  "{$canOneFrameClipOW,book}"
                 ],
                 "capture_item": true,
                 "item_count": 1
@@ -435,7 +443,9 @@
               "aga1,pearl,hammer,hookshot",
               "aga1,pearl,lift1,hookshot", // NMG
               "boots,pearl",
-              "mirror,pearl"
+              "mirror,pearl",
+              "$canOWYBA", //MG
+              "$canOneFrameClipOW"
             ], //DMD
             "children": [
               {
@@ -443,6 +453,11 @@
                 "sections": [
                   {
                     "name": "Stumpy",
+                    "access_rules": [
+                      "pearl",
+                      "$canOWYBA",
+                      "$canMirrorWrap"
+                    ],
                     "item_count": 1
                   }
                 ],
@@ -460,6 +475,10 @@
                 "sections": [
                   {
                     "name": "Cave",
+                    "access_rules": [
+                      "pearl",
+                      "$canOWYBA"
+                    ],
                     "item_count": 5
                   }
                 ],
@@ -476,6 +495,10 @@
                 "sections": [
                   {
                     "name": "Dig For Treasure",
+                    "access_rules": [
+                      "pearl",
+                      "$canOWYBA"
+                    ],
                     "item_count": 1
                   }
                 ],
@@ -587,8 +610,11 @@
               "pearl,boots",
               "pearl, mirror, flute, lift1",
               "pearl, mirror, bottle, lift1, []",
-              "pearl, mirror, lift1, [lamp]"
-            ], //OWG
+              "pearl, mirror, lift1, [lamp]", //OWG
+              "$canOWYBA,boots",
+              "$canOWYBA,lift1",
+              "$canOWYBA,$canOneFrameClipOW" //MG
+            ], 
             "sections": [
               {
                 "name": "Ring of Stones",
@@ -602,7 +628,7 @@
                 "y": 347
               }
             ]
-          },
+          }
         ]
       },
       //  Eastern Hyrule
@@ -704,7 +730,8 @@
               "pearl,aga1,hammer,hookshot,mirror",
               "pearl,aga1,lift1,hookshot,mirror",
               "pearl,aga1,flippers,hookshot,mirror",
-              "pearl,lift1,hammer,mirror"
+              "pearl,lift1,hammer,mirror",
+              "$canOneFrameClipOW" //MG
             ],
             "sections": [
               {
@@ -739,6 +766,7 @@
                   "book",
                   "flute,lift2,mirror",
                   "boots",
+                  "$canOneFrameClipOW",
                   "{}"
                 ],
                 "capture_item": true,
@@ -788,8 +816,10 @@
       "boots, pearl",
       "mirror, boots",
       "mirror, lift1, [lamp]",
-      "mirror, flute"
-    ], //OWG
+      "mirror, flute", //OWG
+      "$canOneFrameClipOW",
+      "$canOWYBA" //MG
+    ], 
     "children": [
       //  Village of Outcasts
       {
@@ -798,6 +828,10 @@
         "children": [
           {
             "name": "C-Shaped House",
+            "access_rules": [
+              "[pearl]",
+              "$canOWYBA"
+            ],
             "sections": [
               {
                 "name": "House",
@@ -814,6 +848,10 @@
           },
           {
             "name": "Treasure Game",
+            "access_rules": [
+              "[pearl]",
+              "$canOWYBA"
+            ],
             "sections": [
               {
                 "name": "Prize",
@@ -831,7 +869,8 @@
           {
             "name": "Bombable Shack",
             "access_rules": [
-              "pearl"
+              "pearl",
+              "$canOWYBA"
             ],
             "sections": [
               {
@@ -851,7 +890,11 @@
             "name": "Dwarven Smiths",
             "short_name": "Smiths",
             "access_rules": [
-              "lift2"
+              "pearl,lift2",
+              "$canOWYBA,lift2",
+              "$canOWYBA,$canOneFrameClipOW",
+              "$canOWYBA,boots,pearl",
+              "$canOWYBA,boots,bottle:2"
             ],
             "sections": [
               {
@@ -875,7 +918,13 @@
           {
             "name": "Purple Chest",
             "access_rules": [
-              "lift2"
+              "@Dwarven Smiths,$canMirrorWrap",
+              "@Dwarven Smiths,pearl,lift2",
+              "@Dwarven Smiths,$canOWYBA,lift2",
+              "@Dwarven Smiths,pearl,$canOneFrameClipOW",
+              "@Dwarven Smiths,$canOWYBA,$canOneFrameClipOW",
+              "@Dwarven Smiths,pearl,boots",
+              "@Dwarven Smiths,$canOWYBA,boots"
             ],
             "sections": [
               {
@@ -902,8 +951,14 @@
       {
         "name": "Hammer Pegs",
         "access_rules": [
-          "pearl,hammer, boots",
-          "pearl, hammer, lift2"
+          "hammer,pearl,lift2", //NMG
+          "hammer,pearl,boots", //OWG
+          "hammer,$canOWYBA,lift2",
+          "hammer,$canOWYBA,boots",
+          "hammer,pearl,$canMirrorWrap",
+          "hammer,$canOWYBA,$canMirrorWrap",
+          "hammer,pearl,$canOneFrameClipOW",
+          "hammer,$canOWYBA,$canOneFrameClipOW" //MG
         ],
         "sections": [
           {
@@ -928,8 +983,11 @@
             "name": "Ledge",
             "capture_item": true,
             "access_rules": [
-              "lift1,cape",
-              "boots,pearl",
+              "pearl,lift1,cape", //NMG
+              "pearl,boots", //OWG
+              "$canOWYBA,lift1,cape",
+              "$canOWYBA,boots",
+              "$canOneFrameClipOW",
               "{}"
             ],
             "item_count": 1
@@ -1019,7 +1077,9 @@
               "boots",
               "flippers,mirror,aga1",
               "flippers, mirror, pearl, lift1, [lamp]",
-              "flippers, mirror, flute, pearl" //  Minor and Major Glitches
+              "flippers, mirror, flute, pearl", //OWG
+              "$canOneFrameClipOW",
+              "flippers,mirror,$canOWYBA" //MG
             ],
             "capture_item": true,
             "item_count": 1
@@ -1060,7 +1120,9 @@
       "ocarina,lift2", //NMG
       "lift2,boots",
       "pearl,boots", //OWG
-      "lift2,bottle,[]" //OWG Fake Flute
+      "$canOneFrameClipOW",
+      "pearl,$canMirrorWrap",
+      "$canOWYBA"
     ],
     "children": [
       //  Mire Hut
@@ -1068,7 +1130,10 @@
         "name": "Mire Shack",
         "access_rules": [
           "moonpearl",
-          "mirror"
+          "mirror",
+          "$canOWYBA,$canOneFrameClipOW",
+          "$canOWYBA,bottle:2",
+          "$canOWYBA,boots"
         ],
         "sections": [
           //  Hut
@@ -1093,9 +1158,9 @@
     "short_name": "Checkerboard",
     "color": "#aa860d",
     "access_rules": [
-      "lift2, flute, mirror", //NMG
+      "@Mire Area,mirror", //NMG
       "boots", //OWG
-      "lift2, bottle, mirror []" //OWG Fake Flute
+      "$canOneFrameClipOW"
     ],
     "sections": [
       //  Cave
@@ -1124,7 +1189,8 @@
       "lift1,[lamp]",
       "flute", //NMG
       "boots", //OWG
-      "bottle,[]" //OWG Fake Flute
+      "$canOWYBA",
+      "$canOneFrameClipOW" //MG
     ],
     "children": [
       //  Old Man
@@ -1161,6 +1227,7 @@
             "access_rules": [
               "mirror",
               "boots",
+              "$canOneFrameClipOW",
               "{}"
             ],
             "item_count": 1
@@ -1180,7 +1247,9 @@
         "access_rules": [
           "mirror",
           "hookshot,hammer",
-          "boots"
+          "boots",
+          "$canOneFrameClipOW"
+          // possible MM > Hera UW clip?
         ],
         "sections": [
           {
@@ -1211,8 +1280,13 @@
             "access_rules": [
               "pearl,hammer,lift1,[byrna]",
               "pearl,hammer,lift1,[cape],[halfmagic]",
-              "pearl,hammer,lift1,[byrna]",
-              "pearl,hammer,lift1,[cape],[bottle:1]"
+              "pearl,hammer,lift1,[cape],[bottle:1]",
+              "$canOWYBA,hammer,lift1,boots,[byrna]", //MG
+              "$canOWYBA,hammer,lift1,boots,[cape],[bottle:3]", //extra bottles needed for fake flutes
+              "$canOWYBA,hammer,lift1,boots,[cape],[halfmagic],[bottle:2]",
+              "$canOWYBA,hammer,lift1,$canOneFrameClipOW,[byrna]",
+              "$canOWYBA,hammer,lift1,$canOneFrameClipOW,[cape],[bottle:3]",
+              "$canOWYBA,hammer,lift1,$canOneFrameClipOW,[cape],[halfmagic],[bottle:2]"
             ],
             "item_count": 1
           }
@@ -1229,9 +1303,12 @@
       {
         "name": "East Death Mountain",
         "access_rules": [
-          "mirror, hammer",
+          "mirror,hammer",
           "hookshot", //NMG
-          "boots" //OWG
+          "mirror",
+          "boots", //OWG
+          "$canOneFrameClipOW" //MG
+          // hammer + UW clip from Hera
         ],
         "children": [
           //  Spiral Cave
@@ -1278,90 +1355,6 @@
               }
             ]
           },
-          //  Dark Death Mountain
-          {
-            "name": "Dark Death Mountain",
-            "group": "Death Mountain",
-            "color": "#35046b",
-            "access_rules": [
-              "lift2", //NMG
-              "boots, pearl" //OWG
-            ],
-            "children": [
-              //  Super-Bunny Cave
-              {
-                "name": "Super-Bunny Cave",
-                "sections": [
-                  {
-                    "name": "Cave",
-                    "item_count": 2
-                  }
-                ],
-                "map_locations": [
-                  {
-                    "map": "darkworld",
-                    "x": 1695,
-                    "y": 290
-                  }
-                ]
-              },
-              // Mimic Cave
-              {
-                "name": "Mimic Cave",
-                "color": "#934f17",
-                "access_rules": [
-                  "mirror,hammer"
-                ],
-                "sections": [
-                  {
-                    "name": "Cave",
-                    "item_count": 1
-                  }
-                ],
-                "map_locations": [
-                  {
-                    "map": "lightworld",
-                    "x": 1694,
-                    "y": 190
-                  }
-                ]
-              },
-              //  Hookshot Cave
-              {
-                "name": "Hookshot Cave",
-                "access_rules": [
-                  "pearl,lift1"
-                ],
-                "sections": [
-                  //  Front chest
-                  {
-                    "name": "Bonkable Chest",
-                    "short_name": "Front",
-                    "access_rules": [
-                      "boots",
-                      "hookshot"
-                    ],
-                    "item_count": 1
-                  },
-                  //  Back Chests
-                  {
-                    "name": "Back",
-                    "access_rules": [
-                      "hookshot"
-                    ],
-                    "item_count": 3
-                  }
-                ],
-                "map_locations": [
-                  {
-                    "map": "darkworld",
-                    "x": 1670,
-                    "y": 126
-                  }
-                ]
-              }
-            ]
-          },
           //  Floating Island
           {
             "name": "Floating Island",
@@ -1374,6 +1367,9 @@
                 "access_rules": [
                   "pearl,lift2,mirror",
                   "boots",
+                  "$canOWYBA",
+                  "$canOneFrameClipOW",
+                  "$canMirrorWrap",
                   "{}"
                 ],
                 "item_count": 1
@@ -1384,6 +1380,95 @@
                 "map": "lightworld",
                 "x": 1627,
                 "y": 40
+              }
+            ]
+          }
+        ]
+      },
+      //  Dark Death Mountain
+      {
+        "name": "Dark Death Mountain",
+        "group": "Death Mountain",
+        "color": "#35046b",
+        "access_rules": [
+          "@East Death Mountain,lift2", //NMG
+          "boots,pearl", //OWG
+          "boots,hammer",
+          "boots,$canOWYBA",
+          "$canOneFrameClipOW"
+        ],
+        "children": [
+          //  Super-Bunny Cave
+          {
+            "name": "Super-Bunny Cave",
+            "sections": [
+              {
+                "name": "Cave",
+                "item_count": 2
+              }
+            ],
+            "map_locations": [
+              {
+                "map": "darkworld",
+                "x": 1695,
+                "y": 290
+              }
+            ]
+          },
+          // Mimic Cave
+          {
+            "name": "Mimic Cave",
+            "color": "#934f17",
+            "access_rules": [
+              "mirror,hammer"
+            ],
+            "sections": [
+              {
+                "name": "Cave",
+                "item_count": 1
+              }
+            ],
+            "map_locations": [
+              {
+                "map": "lightworld",
+                "x": 1694,
+                "y": 190
+              }
+            ]
+          },
+          //  Hookshot Cave
+          {
+            "name": "Hookshot Cave",
+            "access_rules": [
+              "pearl,lift1", //NMG
+              "pearl,boots" //OWG
+            ],
+            "sections": [
+              //  Front chest
+              {
+                "name": "Bonkable Chest",
+                "short_name": "Front",
+                "access_rules": [
+                  "boots",
+                  "hookshot"
+                ],
+                "item_count": 1
+              },
+              //  Back Chests
+              {
+                "name": "Back",
+                "access_rules": [
+                  "hookshot",
+                  "[hookshot],boots"
+                ],
+                "item_count": 3
+              }
+            ],
+            "map_locations": [
+              {
+                "map": "darkworld",
+                "x": 1670,
+                "y": 126
               }
             ]
           }
