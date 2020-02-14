@@ -178,20 +178,17 @@
                                   "type": "group",
                                   "header": "Items",
                                   "dock": "top",
+                                  "header_content": {
+                                      "type": "button_popup",
+                                      "style": "settings",
+                                      "popup_background": "#55212121",
+                                      "layout": "glitched_mode"
+                                  },
                                   "content": {
                                       "type": "layout",
                                       "key": "shared_item_grid"
                                   }
                               }
-                          //    {
-                          //        "type": "group",
-                          //        "header": "Glitched Logic",
-                          //        "dock": "bottom",
-                          //        "content": {
-                          //            "type": "layout",
-                          //            "key": "glitched_mode"
-                          //        }
-                          //    }
                           ]
                       },
                       {
@@ -234,21 +231,17 @@
                                   "header": "Items",
                                   "margin": "0,0,3,0",
                                   "dock": "top",
+                                  "header_content": {
+                                      "type": "button_popup",
+                                      "style": "settings",
+                                      "popup_background": "#55212121",
+                                      "layout": "glitched_mode"
+                                  },
                                   "content": {
                                       "type": "layout",
                                       "key": "shared_item_grid"
                                   }
                               }
-                            //  {
-                            //      "type": "group",
-                            //      "header": "Glitched Logic",
-                            //      "margin": "0,0,3,0",
-                            //      "dock": "bottom",
-                            //      "content": {
-                            //          "type": "layout",
-                            //          "key": "glitched_mode"
-                            //      }
-                            //  }
                           ]
                       },
                       {
