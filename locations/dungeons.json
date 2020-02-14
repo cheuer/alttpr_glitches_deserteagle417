@@ -217,7 +217,8 @@
                         "name": "Swamp Palace",
                         "color": "#af0000",
                         "access_rules": [
-                            "mirror,flippers"
+                            "mirror,flippers",
+                            "flippers,$canOneFrameClipUW,@Misery Mire"
                         ],
                         "sections": [
                             //  Front
