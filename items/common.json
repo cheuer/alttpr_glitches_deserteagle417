@@ -603,13 +603,13 @@
     "stages": [
       {
         "name": "OWG",
-        "img": "images/owg.png",
+        "img": "images/OWG.png",
         "inherit_codes": false,
         "codes": "owg"
       },
       {
         "name": "MG",
-        "img": "images/mg.png",
+        "img": "images/MG.png",
         "inherit_codes": false,
         "codes": "mg"
       }
