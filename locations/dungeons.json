@@ -529,7 +529,8 @@
                         "access_rules": [
                             "$upperTurtleRock, tr_bigkey, somaria, [lamp], []", //Upper Entrance
                             "$middleTurtleRock, tr_bigkey, [somaria], [lamp], []", //Middle Entrance
-                            "$lowerTurtleRock" //Lower Entrance
+                            "$lowerTurtleRock", //Lower Entrance
+                            "$upperTurtleRock, $middleTurtleRock, owg, lamp, somaria" //For Green TR Access (OWG)
                         ],
                         "item_count": 4
                     },
@@ -539,7 +540,8 @@
                             "$upperTurtleRock, tr_bigkey, somaria, firerod, icerod, [lamp], []", //Upper Entrance
                             "$middleTurtleRock, tr_bigkey, somaria, icerod, firerod, [lamp], []", //Middle Entrance
                             "$lowerTurtleRock, tr_bigkey, somaria, icerod, firerod, []", //Lower Entrance
-                            "$lowerTurtleRock, $middleTurtleRock, $upperTurtleRock, somaria, icerod, firerod" //For Green TR Access
+                            "$upperTurtleRock, $middleTurtleRock, owg, lamp, somaria, icerod, firerod", //For Green TR Access (OWG)
+                            "$lowerTurtleRock, $middleTurtleRock, somaria, icerod, firerod" //For Green TR Access (MG)
                         ],
                         "item_count": 1,
                         "hosted_item": "turtlerock"
