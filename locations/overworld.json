@@ -550,7 +550,8 @@
                 "access_rules": [
                   "flippers",
                   "pearl,[flippers]",
-                  "boots,[flippers]"
+                  "boots,[flippers]", //NMG
+                  "boots" //OWG
                 ],
                 "sections": [
                   {
@@ -590,7 +591,8 @@
                       "{lift1}",
                       "{[flippers]}",
                       "{}", //NMG
-                      "pearl,boots" //OWG
+                      "boots",
+                      "pearl" //OWG
                     ],
                     "item_count": 1
                   }
