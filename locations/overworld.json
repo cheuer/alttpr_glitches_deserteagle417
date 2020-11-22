@@ -832,7 +832,8 @@
             "name": "C-Shaped House",
             "access_rules": [
               "[pearl]",
-              "$canOWYBA"
+              "$canOWYBA",
+              "" //OWG via superBunny
             ],
             "sections": [
               {
@@ -852,7 +853,8 @@
             "name": "Treasure Game",
             "access_rules": [
               "[pearl]",
-              "$canOWYBA"
+              "$canOWYBA",
+              "" //OWG via superBunny
             ],
             "sections": [
               {
