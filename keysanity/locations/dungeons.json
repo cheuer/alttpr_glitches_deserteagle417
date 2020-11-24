@@ -329,7 +329,7 @@
                     {
                         "name": "Back",
                         "access_rules": [
-                            "firerod"
+                            "[pearl],firerod"
                         ],
                         "clear_as_group": false,
                         "item_count": 1
