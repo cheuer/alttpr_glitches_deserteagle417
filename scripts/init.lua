@@ -8,15 +8,9 @@ Tracker:AddMaps("maps/maps.json")
 Tracker:AddItems("items/common.json")
 Tracker:AddItems("items/dungeon_items.json")
 Tracker:AddItems("items/labels.json")
+Tracker:AddItems("items/keys.json")
 
--- If current version is keysanity, add all keys, otherwise only add TR and GT big keys
-if not (string.find(Tracker.ActiveVariantUID, "keys")) then
-    Tracker:AddItems("items/keys_TRGT.json")
-    Tracker:AddLocations("locations/dungeons.json")
-else
-    Tracker:AddItems("items/keys.json")
-    Tracker:AddLocations("keysanity/locations/dungeons.json")
-end
+Tracker:AddLocations("locations/dungeons.json")
 
 if not (string.find(Tracker.ActiveVariantUID, "inverted")) then
     Tracker:AddLocations("locations/overworld.json")

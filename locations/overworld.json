@@ -414,10 +414,10 @@
               {
                 "name": "Tablet",
                 "access_rules": [
-                  "@Dark Central (Left),mirror,$canActivateTablets", //NMG
+                  "@Dark Central (Left),mirror,book,$canActivateTablets", //NMG
                   "boots,book,$canActivateTablets",
                   "{boots,book}",
-                  "$canOneFrameClipOW,$canActivateTablets", //MG
+                  "$canOneFrameClipOW,book,$canActivateTablets", //MG
                   "{$canOneFrameClipOW,book}"
                 ],
                 "capture_item": true,
@@ -550,7 +550,8 @@
                 "access_rules": [
                   "flippers",
                   "pearl,[flippers]",
-                  "boots,[flippers]"
+                  "boots,[flippers]", //NMG
+                  "boots" //OWG
                 ],
                 "sections": [
                   {
@@ -590,7 +591,8 @@
                       "{lift1}",
                       "{[flippers]}",
                       "{}", //NMG
-                      "pearl,boots" //OWG
+                      "boots",
+                      "pearl" //OWG
                     ],
                     "item_count": 1
                   }
@@ -830,7 +832,8 @@
             "name": "C-Shaped House",
             "access_rules": [
               "[pearl]",
-              "$canOWYBA"
+              "$canOWYBA",
+              "" //OWG via superBunny
             ],
             "sections": [
               {
@@ -850,7 +853,8 @@
             "name": "Treasure Game",
             "access_rules": [
               "[pearl]",
-              "$canOWYBA"
+              "$canOWYBA",
+              "" //OWG via superBunny
             ],
             "sections": [
               {

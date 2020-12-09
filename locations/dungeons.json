@@ -217,7 +217,8 @@
                         "name": "Swamp Palace",
                         "color": "#af0000",
                         "access_rules": [
-                            "mirror,flippers"
+                            "mirror,flippers",
+                            "flippers,$canOneFrameClipUW,@Misery Mire"
                         ],
                         "sections": [
                             //  Front
@@ -286,7 +287,7 @@
                     {
                         "name": "Mothula",
                         "access_rules": [
-                            "firerod,$canRemoveCurtains"
+                            "[pearl],firerod,$canRemoveCurtains"
                         ],
                         "hosted_item": "skullwoods"
                     }
@@ -528,7 +529,8 @@
                         "access_rules": [
                             "$upperTurtleRock, tr_bigkey, somaria, [lamp], []", //Upper Entrance
                             "$middleTurtleRock, tr_bigkey, [somaria], [lamp], []", //Middle Entrance
-                            "$lowerTurtleRock" //Lower Entrance
+                            "$lowerTurtleRock", //Lower Entrance
+                            "$upperTurtleRock, $middleTurtleRock, owg, lamp, somaria" //For Green TR Access (OWG)
                         ],
                         "item_count": 4
                     },
@@ -538,7 +540,8 @@
                             "$upperTurtleRock, tr_bigkey, somaria, firerod, icerod, [lamp], []", //Upper Entrance
                             "$middleTurtleRock, tr_bigkey, somaria, icerod, firerod, [lamp], []", //Middle Entrance
                             "$lowerTurtleRock, tr_bigkey, somaria, icerod, firerod, []", //Lower Entrance
-                            "$lowerTurtleRock, $middleTurtleRock, $upperTurtleRock, somaria, icerod, firerod" //For Green TR Access
+                            "$upperTurtleRock, $middleTurtleRock, owg, lamp, somaria, icerod, firerod", //For Green TR Access (OWG)
+                            "$lowerTurtleRock, $middleTurtleRock, somaria, icerod, firerod" //For Green TR Access (MG)
                         ],
                         "item_count": 1,
                         "hosted_item": "turtlerock"
@@ -611,7 +614,7 @@
                         "name": "Tower",
                         "clear_as_group": false,
                         "access_rules": [
-                            "bow,firesource,gt_bigkey,[hookshot]"
+                            "[bow],firesource,gt_bigkey,[hookshot]"
                         ],
                         "item_count": 4
                     },
@@ -619,7 +622,7 @@
                         "name": "Agahnim",
                         "clear_as_group": false,
                         "access_rules": [
-                            "bow,firesource,gt_bigkey,hookshot"
+                            "[bow],firesource,gt_bigkey,[hookshot]"
                         ],
                         "hosted_item": "aga2"
                     }

@@ -2,9 +2,9 @@
   "name": "ALttPR Glitched Modes",
   "game_name": "A Link to the Past Randomizer",
   "platform": "snes",
-  "package_version": "1.0.4",
+  "package_version": "2.0.2",
   "package_uid": "alttpr_glitches_deserteagle417",
-  "author": "deserteagle417",
+  "author": "deserteagle417, Spleebie",
   "variants": {
     "standard": {
       "display_name": "Standard Map Tracker"
