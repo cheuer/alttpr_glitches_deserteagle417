@@ -10,6 +10,8 @@ Tracker:AddItems("items/dungeon_items.json")
 Tracker:AddItems("items/labels.json")
 Tracker:AddItems("items/keys.json")
 
+Tracker:AddLocations("locations/dungeons.json")
+
 if not (string.find(Tracker.ActiveVariantUID, "inverted")) then
     Tracker:AddLocations("locations/overworld.json")
 else
