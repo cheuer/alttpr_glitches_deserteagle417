@@ -130,7 +130,7 @@
   {
     "name": "Turtle Rock Big Key",
     "type": "toggle",
-    "img": "images/TRBK.png",
+    "img": "images/BigKey.png",
     "codes": "tr_bigkey"
   },
   // TR Small Keys
@@ -169,7 +169,7 @@
   {
     "name": "Ganon's Tower Big Key",
     "type": "toggle",
-    "img": "images/GTBK.png",
+    "img": "images/BigKey.png",
     "codes": "gt_bigkey"
   }  
 ]
