@@ -197,13 +197,36 @@ function updateConsumableItemFromByte(segment, code, address)
     end
 end
 
-function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag)
+function updateConsumableItemFromTwoByteSum(segment, code, address, address2)
+    local item = Tracker:FindObjectForCode(code)
+    if item then
+        local value = ReadU8(segment, address)
+        local value2 = ReadU8(segment, address2)
+        item.AcquiredCount = value + value2
+    else
+        print("Couldn't find item: ", code)
+    end
+end
+
+function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag, locationCode)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
         local flagTest = value & flag
 
-        if flagTest ~= 0 then
+        local isCleared = false
+        if locationCode then
+            local location = Tracker:FindObjectForCode(locationCode)
+            if location then
+                if location.AvailableChestCount == 0 then
+                    isCleared = true
+                end
+            end
+        end
+
+        if isCleared then
+            item.CurrentStage = math.max(2, item.CurrentStage)
+        elseif flagTest ~= 0 then
             item.CurrentStage = math.max(1, item.CurrentStage)
         else
             item.CurrentStage = 0
@@ -296,11 +319,24 @@ function updateBatIndicatorStatus(status)
     end
 end
 
+function updateShovelIndicatorStatus(status)
+    local item = Tracker:FindObjectForCode("shovel")
+    if item then
+        if status then
+            item.CurrentStage = 1
+        else
+            item.CurrentStage = 0
+        end
+    end
+end
+
 function updateMushroomStatus(status)
     local item = Tracker:FindObjectForCode("mushroom")
     if item then
         if status then
-            item.CurrentStage = 2
+            item.CurrentStage = 1
+        else
+            item.CurrentStage = 0
         end
     end
 end
@@ -352,7 +388,7 @@ function updateOverworldEventsFromMemorySegment(segment)
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Spectacle Rock/Up On Top",              3)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Floating Island/Island",                5)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Race Game/Take This Trash",             40)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Grove Digging Spot/Hidden Treasure",    42)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Grove Digging Spot/Hidden Treasure",    42, updateShovelIndicatorStatus)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Desert Ledge/Ledge",                    48)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lake Hylia Island/Island",              53)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Dam/Outside",                           59)    
@@ -427,6 +463,8 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, "@Checkerboard Cave/Cave", { { 294, 9 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Hammer Pegs/Cave", { { 295, 10 } })
 
+    updateToggleItemFromByteAndFlag(segment, "aga2", 0x7ef01b, 0x08)
+
 end
 
 function updateItemsFromMemorySegment(segment)
@@ -443,7 +481,7 @@ function updateItemsFromMemorySegment(segment)
         updateProgressiveItemFromByte(segment, "shield", 0x7ef35a, 0)
         updateProgressiveItemFromByte(segment, "armor",  0x7ef35b, 0)
         updateProgressiveItemFromByte(segment, "gloves", 0x7ef354, 0)
-        
+
         updateToggleItemFromByte(segment, "hookshot",  0x7ef342)
         updateToggleItemFromByte(segment, "bombs",     0x7ef343)
         updateToggleItemFromByte(segment, "firerod",   0x7ef345)
@@ -458,7 +496,6 @@ function updateItemsFromMemorySegment(segment)
         updateToggleItemFromByte(segment, "somaria",   0x7ef350)
         updateToggleItemFromByte(segment, "byrna",     0x7ef351)
         updateToggleItemFromByte(segment, "cape",      0x7ef352)
-        updateToggleItemFromByte(segment, "mirror",    0x7ef353)
         updateToggleItemFromByte(segment, "boots",     0x7ef355)
         updateToggleItemFromByte(segment, "flippers",  0x7ef356)
         updateToggleItemFromByte(segment, "pearl",     0x7ef357)
@@ -466,23 +503,17 @@ function updateItemsFromMemorySegment(segment)
 
         updateToggleItemFromByteAndFlag(segment, "blue_boomerang", 0x7ef38c, 0x80)
         updateToggleItemFromByteAndFlag(segment, "red_boomerang",  0x7ef38c, 0x40)
+        updateToggleItemFromByteAndFlag(segment, "shovel", 0x7ef38c, 0x04)
         updateToggleItemFromByteAndFlag(segment, "powder", 0x7ef38c, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "mushroom", 0x7ef38c, 0x20)
         updateToggleItemFromByteAndFlag(segment, "np_bow", 0x7ef38e, 0x80)
         updateToggleItemFromByteAndFlag(segment, "np_silvers", 0x7ef38e, 0x40)
-
-        updatePseudoProgressiveItemFromByteAndFlag(segment, "mushroom", 0x7ef38c, 0x20)
-        updatePseudoProgressiveItemFromByteAndFlag(segment, "shovel", 0x7ef38c, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "mirror", 0x7ef353, 0x02)
 
         updateProgressiveBow(segment)
         updateBottles(segment)
         updateFlute(segment)
         updateAga1(segment)
-    
-        --  We support big keys, but not small keys. There is no way, in ram, to determine speciflcally
-        --  the number of chest keys you have obtained that is
-        --      a) reliable regardless of timing, and...
-        --      b) does not necessitate accessing the item table directly, which
-        --          constitutes cheating and is disallowed.
 
         updateToggleItemFromByteAndFlag(segment, "gt_bigkey",  0x7ef366, 0x04)
         updateToggleItemFromByteAndFlag(segment, "tr_bigkey",  0x7ef366, 0x08)
@@ -495,7 +526,7 @@ function updateItemsFromMemorySegment(segment)
         updateToggleItemFromByteAndFlag(segment, "sp_bigkey",  0x7ef367, 0x04)
         updateToggleItemFromByteAndFlag(segment, "dp_bigkey",  0x7ef367, 0x10)
         updateToggleItemFromByteAndFlag(segment, "ep_bigkey",  0x7ef367, 0x20)
-
+      
     end
 
     if not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
@@ -509,6 +540,35 @@ function updateItemsFromMemorySegment(segment)
     updateSectionChestCountFromByteAndFlag(segment, "@Bottle Vendor/This Jerk", 0x7ef3c9, 0x02)
     updateSectionChestCountFromByteAndFlag(segment, "@Purple Chest/Show To Gary", 0x7ef3c9, 0x10)
 
+end
+
+function updateChestKeysFromMemorySegment(segment)
+
+    if not isInGame() then
+        return false
+    end
+
+    InvalidateReadCaches()
+
+    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+
+        -- Pending small key from chests tracking update
+        -- Sewers is unused by the game - this is here for reference sake
+        -- updateConsumableItemFromByte(segment, "sewers_smallkey",  0x7ef4e0)
+        updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef4e0, 0x7ef4e1)
+        updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e3)
+        updateConsumableItemFromByte(segment, "at_smallkey",  0x7ef4e4)
+        updateConsumableItemFromByte(segment, "sp_smallkey",  0x7ef4e5)
+        updateConsumableItemFromByte(segment, "pod_smallkey", 0x7ef4e6)
+        updateConsumableItemFromByte(segment, "mm_smallkey",  0x7ef4e7)
+        updateConsumableItemFromByte(segment, "sw_smallkey",  0x7ef4e8)
+        updateConsumableItemFromByte(segment, "ip_smallkey",  0x7ef4e9)
+        updateConsumableItemFromByte(segment, "toh_smallkey", 0x7ef4ea)
+        updateConsumableItemFromByte(segment, "tt_smallkey",  0x7ef4eb)
+        updateConsumableItemFromByte(segment, "tr_smallkey",  0x7ef4ec)
+        updateConsumableItemFromByte(segment, "gt_smallkey",  0x7ef4ed)
+       
+    end
 end
 
 function updateHeartPiecesFromMemorySegment(segment)
@@ -610,3 +670,4 @@ ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOve
 ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
 ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment)
 ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment)
